@@ -11,7 +11,7 @@ import AuthStack from "./AuthStack";
 const RootStack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  const [userToken, setUserToken] = useState("123");
+  const [userToken, setUserToken] = useState();
 
   return (
     <NavigationContainer>
