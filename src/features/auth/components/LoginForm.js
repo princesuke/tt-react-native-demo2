@@ -6,6 +6,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { useFormik } from "formik";
+import { validateLogin } from "../utils/loginValidation";
 
 export default function LoginForm() {
   const formik = useFormik({
@@ -13,6 +14,7 @@ export default function LoginForm() {
       email: "",
       password: "",
     },
+    validate: validateLogin,
     onSubmit: (values) => {
       console.log("Form Data:", values);
     },
@@ -31,6 +33,9 @@ export default function LoginForm() {
           keyboardType="email-address"
           autoCapitalize="none"
         />
+        {formik.touched.email && formik.errors.email && (
+            <Text style={styles.errorText}>{formik.errors.email}</Text>
+        )}
       </View>
 
       <View style={styles.inputGroup}>
@@ -43,6 +48,9 @@ export default function LoginForm() {
           onChangeText={formik.handleChange("password")}
           onBlur={formik.handleBlur("password")}
         />
+        {formik.touched.password && formik.errors.password && (
+            <Text style={styles.errorText}>{formik.errors.password}</Text>
+        )}
       </View>
 
       <TouchableOpacity style={styles.button} onPress={formik.handleSubmit}>
