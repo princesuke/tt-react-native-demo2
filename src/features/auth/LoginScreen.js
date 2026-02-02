@@ -1,7 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import LoginForm from "./components/LoginForm";
 
-export default function LoginScreen() {
+export default function LoginScreen({setUserToken}) {
+
+  const handleLogin = (values) => {
+    console.log("เข้าสู่ระบบด้วย:", values);
+    setUserToken("succuess-token")
+  }
+
   return (
     <View style={styles.mainWrapper}>
 
@@ -13,7 +19,7 @@ export default function LoginScreen() {
         </View>
 
         <View style={styles.formArea}>
-          <LoginForm />
+          <LoginForm onLoginSuccess={handleLogin}/>
         </View>
       </View>
 

@@ -8,7 +8,7 @@ import {
 import { useFormik } from "formik";
 import { validateLogin } from "../utils/loginValidation";
 
-export default function LoginForm() {
+export default function LoginForm({onLoginSuccess}) {
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -16,7 +16,8 @@ export default function LoginForm() {
     },
     validate: validateLogin,
     onSubmit: (values) => {
-      console.log("Form Data:", values);
+    //   console.log("Form Data:", values);
+      onLoginSuccess(values)
     },
   });
 
