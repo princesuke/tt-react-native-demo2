@@ -39,6 +39,9 @@ export default function LoginForm() {
           style={styles.input}
           placeholder="ระบุรหัสผ่านของคุณ"
           secureTextEntry={true}
+          value={formik.values.password}
+          onChangeText={formik.handleChange("password")}
+          onBlur={formik.handleBlur("password")}
         />
       </View>
 
