@@ -1,8 +1,15 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Button} from 'react-native'
 
-export default function HomeScreen() {
+export default function HomeScreen({setUserToken}) {
+
+    const handleLogout = ()=> {
+      console.log("ออกจากระบบ")
+      setUserToken(null)
+    }
+
     return <View style={styles.container}>
         <Text>Home Screen</Text>
+        <Button title='ออกจากระบบ' onPress={handleLogout} />
     </View>   
 }
 

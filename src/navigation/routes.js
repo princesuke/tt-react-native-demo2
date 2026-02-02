@@ -13,5 +13,5 @@ export const SCREENS = {
   //Demo
   DETAIL_SCREEN: "DetailScreen",
   POST_SCREEN: "PostScreen",
-  HOME: "Home"
+  HOME: "HomeScreen"
 };

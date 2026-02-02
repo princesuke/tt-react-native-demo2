@@ -11,7 +11,7 @@ import AuthStack from "./AuthStack";
 const RootStack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  const [userToken, setUserToken] = useState();
+  const [userToken, setUserToken] = useState("123");
 
   return (
     <NavigationContainer>
@@ -23,7 +23,7 @@ export default function AppNavigator() {
         ) : (
           <>
             <RootStack.Screen name="MainTab">
-              {(props) => <MainTabNavigator {...props} />}
+              {(props) => <MainTabNavigator {...props} setUserToken={setUserToken} />}
             </RootStack.Screen>
 
             <RootStack.Screen
