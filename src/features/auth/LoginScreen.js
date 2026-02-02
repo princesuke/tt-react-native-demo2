@@ -1,19 +1,22 @@
 import { View, Text, StyleSheet } from "react-native";
+import LoginForm from "./components/LoginForm";
 
 export default function LoginScreen() {
   return (
     <View style={styles.mainWrapper}>
+
       <View style={styles.contentContainer}>
         <View style={styles.headerArea}>
-          <Text style={styles.brandTag}>Ma App</Text>
+          <Text style={styles.brandTag}>My App</Text>
           <Text style={styles.mainTitle}>Sign In</Text>
           <Text style={styles.subTitle}>ป้อนอีเมลและรหัสผ่านเพื่อไปต่อ</Text>
         </View>
+
+        <View style={styles.formArea}>
+          <LoginForm />
+        </View>
       </View>
 
-      <View style={styles.formArea}>
-        {/* ใส่ฟอร์ม */}
-      </View>
     </View>
   );
 }
