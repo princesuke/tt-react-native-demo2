@@ -9,11 +9,21 @@ export default function LoginScreen() {
     console.log("เข้าสู่ระบบด้วย:", values);
     // setUserToken("succuess-token")
     login("succuess-token");
-  }
+  };
+
+  const triggerDeath = () => {
+    console.log("กำลังจะระเบิดแอปใน 3... 2... 1...");
+    // console.log(a.data);
+    setTimeout(() => {
+      throw new Error("Fatal Error จากการทดสอบ!");
+    }, 100);
+  };
+
+  const name = null;
 
   return (
     <View style={styles.mainWrapper}>
-
+      {/* {name.aaa} */}
       <View style={styles.contentContainer}>
         <View style={styles.headerArea}>
           <Text style={styles.brandTag}>My App</Text>
@@ -22,10 +32,10 @@ export default function LoginScreen() {
         </View>
 
         <View style={styles.formArea}>
-          <LoginForm onLoginSuccess={handleLogin}/>
+          <LoginForm onLoginSuccess={handleLogin} />
+          {/* <LoginForm onLoginSuccess={triggerDeath} /> */}
         </View>
       </View>
-
     </View>
   );
 }
