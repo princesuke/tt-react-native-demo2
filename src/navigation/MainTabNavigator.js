@@ -7,7 +7,7 @@ import PostScreen from "../features/post/PostScreen";
 
 const Tab = createBottomTabNavigator();
 
-export default function MainTabNavigator({ setUserToken }) {
+export default function MainTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -25,7 +25,7 @@ export default function MainTabNavigator({ setUserToken }) {
     >
       {/* <Tab.Screen name={SCREENS.HOME} component={HomeScreen} /> */}
       <Tab.Screen name={SCREENS.HOME}>
-        {(props) => <HomeScreen {...props} setUserToken={setUserToken} />}
+        {(props) => <HomeScreen {...props} />}
       </Tab.Screen>
       <Tab.Screen name={SCREENS.DETAIL_SCREEN} component={DetailScreen} />
       {/* <Tab.Screen name={SCREENS.POST_SCREEN} component={PostScreen} /> */}

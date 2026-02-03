@@ -7,23 +7,37 @@ import PostScreen from "../features/post/PostScreen";
 import { SCREENS } from "./routes";
 import MainTabNavigator from "./MainTabNavigator";
 import AuthStack from "./AuthStack";
+import { useAuth } from "../hooks/useAuth";
 
 const RootStack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  const [userToken, setUserToken] = useState();
+  // const [userToken, setUserToken] = useState();
+  const {userToken, isLoading} = useAuth();
+
+  if (isLoading) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    )
+  }
 
   return (
     <NavigationContainer>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
         {userToken == null ? (
-          <RootStack.Screen name="AuthStack">
-            {(props) => <AuthStack {...props} setUserToken={setUserToken} />}
-          </RootStack.Screen>
+          // <RootStack.Screen name="AuthStack">
+          //   {(props) => <AuthStack {...props} />}
+          // </RootStack.Screen>
+          <RootStack.Screen 
+            name="AuthStack"
+            component={AuthStack}
+          />
         ) : (
           <>
             <RootStack.Screen name="MainTab">
-              {(props) => <MainTabNavigator {...props} setUserToken={setUserToken} />}
+              {(props) => <MainTabNavigator {...props} />}
             </RootStack.Screen>
 
             <RootStack.Screen

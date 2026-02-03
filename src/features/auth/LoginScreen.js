@@ -1,11 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
 import LoginForm from "./components/LoginForm";
+import { useAuth } from "../../hooks/useAuth";
 
-export default function LoginScreen({setUserToken}) {
+export default function LoginScreen() {
+  const { login } = useAuth();
 
   const handleLogin = (values) => {
     console.log("เข้าสู่ระบบด้วย:", values);
-    setUserToken("succuess-token")
+    // setUserToken("succuess-token")
+    login("succuess-token");
   }
 
   return (
