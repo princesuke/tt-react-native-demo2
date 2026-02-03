@@ -1,27 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { initialState, reducers } from "../logic/authLogic";
 
 const authSlice = createSlice({
-    name: 'auth',
-    initialState: {
-        userToken: null,
-        isLoading: true,
-        createdAt: null
-    },
-    reducers: {
-        setToken:(state, action) => {
-            state.userToken = action.payload;
-            state.createdAt = action.createdAt;
-            state.isLoading = false;
-        },
-        clearToken:(state)=> {
-            state.userToken = null;
-            state.isLoading = false;
-        },
-        setLoading:(state, action) => {
-            state.isLoading = action.payload;
-        }
-    }
-})
+  name: "auth",
+  initialState,
+  reducers,
+});
 
-export const {setToken, clearToken, setLoading} = authSlice.actions;
+export const { setToken, clearToken, setLoading } = authSlice.actions;
 export default authSlice.reducer;
