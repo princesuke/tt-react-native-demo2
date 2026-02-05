@@ -8,6 +8,7 @@ import { View, Button } from "react-native";
 import Counter2Screen from "./src/features/demo/Counter2Screen";
 import AppErrorScreen from "./src/features/demo/AppErrorScreen";
 import UserScreen from "./src/features/demo/UserScreen";
+import PostScreen from "./src/features/demo/PostScreen";
 
 export default function App() {
 
@@ -38,7 +39,8 @@ export default function App() {
 
   return (
     <Provider store={store}>
-     <UserScreen />
+      <PostScreen />
+     {/* <UserScreen /> */}
 
       {/* <Counter2Screen /> */}
       {/* <AppNavigator /> */}

@@ -6,6 +6,7 @@ import uppercaseMiddleware from "./middleware/upperCaseMiddleware";
 import userReducer from "./slices/userSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas";
+import PostReducer from "./slices/postSlice";
 
 const simpleLoggerMiddleware = (store) => (next) => (action) => {
   console.log("📢 กำลังส่งคำสั่ง:", action.type);
@@ -20,7 +21,8 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: authReducer,
-    user: userReducer
+    user: userReducer,
+    post: PostReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
