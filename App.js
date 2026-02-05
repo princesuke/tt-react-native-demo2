@@ -39,8 +39,8 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <PostScreen />
-     {/* <UserScreen /> */}
+      {/* <PostScreen /> */}
+     <UserScreen />
 
       {/* <Counter2Screen /> */}
       {/* <AppNavigator /> */}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const BASE_URL = 'https://api.yourdomain.com/v1';
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 // --- (A) Public API: สำหรับ Login, Register, หรือข้อมูลสาธารณะ ---
 export const publicApi = axios.create({
