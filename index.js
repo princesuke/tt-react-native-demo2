@@ -5,24 +5,26 @@ import App from './App';
 
 // LogBox.ignoreAllLogs();
 
-setJSExceptionHandler((error, isFatal) => {
 
-  if (isFatal) {
-    Alert.alert(
-      'เกิดข้อผิดพลาดไม่คาดคิด',
-      `ระบบขัดข้อง: ${error.name} \nกรุณาปิดและเปิดแอปใหม่อีกครั้ง`,
-      [{ text: 'ตกลง' }]
-    );
+// setJSExceptionHandler((error, isFatal) => {
 
-    return
-  } else {
-    console.log('Non-fatal:', error);
-    // Alert.alert(error)
-  }
+//   if (isFatal) {
+//     Alert.alert(
+//       'เกิดข้อผิดพลาดไม่คาดคิด',
+//       `ระบบขัดข้อง: ${error.name} \nกรุณาปิดและเปิดแอปใหม่อีกครั้ง`,
+//       [{ text: 'ตกลง' }]
+//     );
 
-   Alert.alert('เกิดข้อผิดพลาดไม่คาดคิด')
+//     return
+//   } else {
+//     console.log('Non-fatal:', error);
+//     // Alert.alert(error)
+//   }
+
+//    Alert.alert('เกิดข้อผิดพลาดไม่คาดคิด')
   
-}, true);
+// }, true);
+
 
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);

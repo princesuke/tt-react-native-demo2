@@ -6,8 +6,13 @@ import { store } from "./src/store";
 import { View, Button } from "react-native";
 
 import Counter2Screen from "./src/features/demo/Counter2Screen";
+import AppErrorScreen from "./src/features/demo/AppErrorScreen";
 
 export default function App() {
+
+
+  return <AppErrorScreen />
+
   // return <ThemeSwitcherScreen />
 
   // return <CounterScreen />npm
