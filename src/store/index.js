@@ -4,6 +4,8 @@ import authReducer from "./slices/authSlice";
 import timestampMiddleware from "./middleware/timestampMiddleware";
 import uppercaseMiddleware from "./middleware/upperCaseMiddleware";
 import userReducer from "./slices/userSlice";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "./sagas";
 
 const simpleLoggerMiddleware = (store) => (next) => (action) => {
   console.log("📢 กำลังส่งคำสั่ง:", action.type);
@@ -11,6 +13,8 @@ const simpleLoggerMiddleware = (store) => (next) => (action) => {
   console.log("✅ เปลี่ยน State เป็น:", store.getState());
   return result;
 };
+
+const sagaMiddlewate = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
@@ -23,5 +27,8 @@ export const store = configureStore({
       simpleLoggerMiddleware,
       timestampMiddleware,
       uppercaseMiddleware,
+      sagaMiddlewate
     ),
 });
+
+sagaMiddlewate.run(rootSaga);
