@@ -7,11 +7,12 @@ import { View, Button } from "react-native";
 
 import Counter2Screen from "./src/features/demo/Counter2Screen";
 import AppErrorScreen from "./src/features/demo/AppErrorScreen";
+import UserScreen from "./src/features/demo/UserScreen";
 
 export default function App() {
 
-
-  return <AppErrorScreen />
+  // return <UserScreen />
+  // return <AppErrorScreen />
 
   // return <ThemeSwitcherScreen />
 
@@ -37,8 +38,10 @@ export default function App() {
 
   return (
     <Provider store={store}>
+     <UserScreen />
+
       {/* <Counter2Screen /> */}
-      <AppNavigator />
+      {/* <AppNavigator /> */}
     </Provider>
   );
 }

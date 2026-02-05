@@ -5,6 +5,7 @@ import { userActions } from "../slices/userSlice";
 const fetchUserApi = (id) => axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
 
 export function* handleFetchUser(action) {
+    // console.log('id=>', action.payload)
     try {
         const response = yield call(fetchUserApi, action.payload);
         
@@ -17,5 +18,6 @@ export function* handleFetchUser(action) {
 }
 
 export function* watchUserSaga() {
+    // console.log('watchUserSaga')
     yield takeEvery(userActions.fetchRequest.type, handleFetchUser);
 }
