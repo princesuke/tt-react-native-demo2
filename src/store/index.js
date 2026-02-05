@@ -3,6 +3,7 @@ import counterReducer from "./slices/counterSlice";
 import authReducer from "./slices/authSlice";
 import timestampMiddleware from "./middleware/timestampMiddleware";
 import uppercaseMiddleware from "./middleware/upperCaseMiddleware";
+import userReducer from "./slices/userSlice";
 
 const simpleLoggerMiddleware = (store) => (next) => (action) => {
   console.log("📢 กำลังส่งคำสั่ง:", action.type);
@@ -15,6 +16,7 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: authReducer,
+    user: userReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
