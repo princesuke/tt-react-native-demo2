@@ -14,7 +14,7 @@ const simpleLoggerMiddleware = (store) => (next) => (action) => {
   return result;
 };
 
-const sagaMiddlewate = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
@@ -27,8 +27,8 @@ export const store = configureStore({
       simpleLoggerMiddleware,
       timestampMiddleware,
       uppercaseMiddleware,
-      sagaMiddlewate
+      sagaMiddleware
     ),
 });
 
-sagaMiddlewate.run(rootSaga);
+sagaMiddleware.run(rootSaga);
